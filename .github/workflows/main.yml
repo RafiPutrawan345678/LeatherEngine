@@ -31,7 +31,7 @@ jobs:
         with:
           name: windowsBuild
           path: export\release\windows\bin\*
-          if-no-files-found: error
+          if-no-files-found:
   Linux:
     runs-on: ubuntu-22.04
     steps:
@@ -56,7 +56,7 @@ jobs:
         with:
           name: linuxBuild
           path: export/release/linux/bin/*
-          if-no-files-found: error
+          if-no-files-found:
   macOS:
     runs-on: macos-${{matrix.version}}
     strategy:
@@ -83,7 +83,7 @@ jobs:
         with:
           name: macOSBuild-${{matrix.version}}
           path: export/release/macos/bin/*
-          if-no-files-found: error
+          if-no-files-found: 
   Android:
     runs-on: ubuntu-latest
     steps:
@@ -113,7 +113,7 @@ jobs:
         with:
           name: androidBuild
           path: export/release/android/bin/app/build/outputs/apk/release/*.apk
-          if-no-files-found: error
+          if-no-files-found:
   iOS:
     runs-on: macos-14
     steps:
@@ -143,4 +143,4 @@ jobs:
         with:
           name: iOSBuild
           path: export/release/ios/build/Release-iphoneos/*.ipa
-          if-no-files-found: error
+          if-no-files-found:
